@@ -1,0 +1,14 @@
+- alias: hasura
+  config:
+    configmap: controller-conf
+    namespace: hasura
+  data: null
+  kubeContext: acronym98
+  name: acronym98
+- alias: hasuras
+  config:
+    configmap: controller-conf
+    namespace: hasura
+  data: null
+  kubeContext: intestate40
+  name: intestate40
