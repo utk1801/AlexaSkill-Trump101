@@ -14,7 +14,7 @@ var handlers = {
   'TrumpSays': function() {
 
     trumpSaysHttp((data) => {
-      var outputSpeech= 'Here goes a Random yet Funny quote ,by the POTUS, Donald Trump! ' + data.value + .....Do you want more?;
+      var outputSpeech= 'Here goes a Random yet Funny quote ,by the POTUS, Donald Trump! ' + data.value + '.....Do you want more?';
 
 
       this.emit(':tell', outputSpeech);
