@@ -1,15 +1,3 @@
-// var express = require('express');
-// var app = express();
-
-// //your routes here
-// app.get('/', function (req, res) {
-//     res.send("Hello World!");
-// });
-
-// app.listen(8080, function () {
-//   console.log('Example app listening on port 8080!');
-// });
-
 var Alexa = require('alexa-sdk');
 var http = require('http');
 
@@ -21,34 +9,36 @@ exports.handler = function(event, context, callback){
 
 var handlers = {
   'LaunchRequest': function () {
-    this.emit('GetAstros');
+    this.emit('TrumpSays');
   },
-  'GetAstros': function() {
+  'TrumpSays': function() {
 
-    getAstrosHttp((data) => {
-
-      // var outputSpeech = `There are currently ${data.people.length} astronauts in space. `;
-      // for (var i=0;i<data.people.length;i++){
-      //   if (i === 0) {
-      //     //first record
-      //     outputSpeech = outputSpeech + 'Their names are: ' + data.people[i].name + ', '
-      //   } else if (i === data.people.length-1) {
-      //     //last record
-      //     outputSpeech = outputSpeech + 'and ' + data.people[i].name + '.'
-      //   } else {
-      //     //middle record(s)
-      //     outputSpeech = outputSpeech + data.people[i].name + ', '
-      //   }
-      // }
-      var outputSpeech= 'Here goes a Random yet Funny quote ,by the POTUS, Donald Trump! ' + data.value;
+    trumpSaysHttp((data) => {
+      var outputSpeech= 'Here goes a Random yet Funny quote ,by the POTUS, Donald Trump! ' + data.value + .....Do you want more?;
 
 
       this.emit(':tell', outputSpeech);
   }
 );
   },
+  'YesIntent': function () {
+    this.emit('TellMore');
+  },
+  'TellMore': function() {
+
+    trumpSaysHttp((data) => {
+      var outputSpeech= data.value;
+
+
+      this.emit(':tell', outputSpeech);
+  }
+);
+  },
+  'AMAZON.NoIntent': function () {
+      this.emit(':tell',"OK! I know you couldnt take it more! LOL..Bye ");
+  },
   'AMAZON.HelpIntent': function () {
-      this.emit(':ask', "What can I help you with?", "How can I help?");
+      this.emit(':tell',"I say a random quote said by none other than the POTUS Himself ! Haha ,you guessed it rite,its about Donald Trump! GOD BLESS AMERICA, Indeed!");
   },
   'AMAZON.CancelIntent': function () {
       this.emit(':tell', "Okay!");
@@ -59,7 +49,7 @@ var handlers = {
 };
 
 
-function getAstrosHttp(callback) {
+function trumpSaysHttp(callback) {
   //http://api.open-notify.org/astros.json
   //https://api.tronalddump.io/random/quote
   var options = {

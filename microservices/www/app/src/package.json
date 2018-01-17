@@ -1,7 +1,7 @@
 {
   "name": "quickstart-docker-express-example",
   "version": "1.0.0",
-  "description": "Demo to show git push build and deploy",
+  "description": "Node Voice Bot for Alexa",
   "scripts": {
     "start": "node server.js"
   },
