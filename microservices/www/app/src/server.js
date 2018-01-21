@@ -14,10 +14,10 @@ var handlers = {
   'TrumpSays': function() {
 
     trumpSaysHttp((data) => {
-      var outputSpeech= 'Here goes a Random yet Funny quote ,by the POTUS, Donald Trump! ' + data.value + '.....Do you want more?';
+      var outputSpeech= 'Here goes a Random yet Funny quote ,by the POTUS, Donald Trump! ' + data.value + ' hmmmmm ..... Do you want more?';
 
 
-      this.emit(':tell', outputSpeech);
+      this.emit(':ask', outputSpeech,' Do you want the next quote?');
   }
 );
   },
@@ -27,15 +27,15 @@ var handlers = {
   'TellMore': function() {
 
     trumpSaysHttp((data) => {
-      var outputSpeech= data.value;
+      var outputSpeech= data.value + ' Do you want the next quote?';
 
 
-      this.emit(':tell', outputSpeech);
+      this.emit(':ask', outputSpeech,' Do you want the next quote?');
   }
 );
   },
   'AMAZON.NoIntent': function () {
-      this.emit(':tell',"OK! I know you couldnt take it more! LOL..Bye ");
+      this.emit(':tell',"OK! I know you couldnt take it more! LOL ... Bye! ");
   },
   'AMAZON.HelpIntent': function () {
       this.emit(':tell',"I say a random quote said by none other than the POTUS Himself ! Haha ,you guessed it rite,its about Donald Trump! GOD BLESS AMERICA, Indeed!");

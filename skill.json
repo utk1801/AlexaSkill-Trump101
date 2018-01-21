@@ -1,0 +1,50 @@
+{
+  "skillManifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Says a quote said by the POTUS Donald Trump.",
+          "examplePhrases": [
+            "Alexa, Tell a Donald Trump quote",
+            "Alexa, what all has Trump said during his presidency",
+            "Alexa, ask API Starter how many humans are in space now"
+          ],
+          "keywords": [
+            "donald",
+            "trump",
+            "POTUS"
+          ],
+          "name": "TrumpSays",
+          "description": "I say a random quote said by none other than the POTUS Himself ! Haha ,you guessed it rite,its about Donald Trump!",
+          "smallIconUri": "https://s3.amazonaws.com/cdn.dabblelab.com/img/skill-template-default-sm.png",
+          "largeIconUri": "https://s3.amazonaws.com/cdn.dabblelab.com/img/skill-template-default-lg.png"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "No special instructions",
+      "category": "EDUCATION_AND_REFERENCE",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/custom"
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {
+          "termsOfUseUrl": "http://dabblelab.com/terms",
+          "privacyPolicyUrl": "http://dabblelab.com/privacy"
+        }
+      },
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}

@@ -1,12 +1,7 @@
 {
-  "name": "quickstart-docker-express-example",
+  "name": "tronald-dump-alexa-skill",
   "version": "1.0.0",
-  "description": "Node Voice Bot for Alexa",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
+  "private": true,
   "dependencies": {
     "alexa-sdk": "^1.0.10"
   }
