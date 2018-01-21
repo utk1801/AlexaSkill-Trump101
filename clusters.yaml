@@ -1,7 +1,7 @@
-- alias: hasuras
+- alias: hasura
   config:
     configmap: controller-conf
     namespace: hasura
   data: null
-  kubeContext: intestate40
-  name: intestate40
+  kubeContext: error86
+  name: error86
