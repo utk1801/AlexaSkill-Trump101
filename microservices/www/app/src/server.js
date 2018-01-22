@@ -14,7 +14,7 @@ var handlers = {
   'TrumpSays': function() {
 
     trumpSaysHttp((data) => {
-      var outputSpeech= 'Here goes a Random yet Funny quote ,by the POTUS, Donald Trump! ' + data.value + ' hmmmmm ..... Do you want more?';
+      var outputSpeech= 'Here goes a Random yet Funny quote ,by the POTUS, Donald Trump! ' + data.value + ' hmmmmm ..... Do you want the first quote?';
 
 
       this.emit(':ask', outputSpeech,' Do you want the next quote?');
@@ -38,7 +38,7 @@ var handlers = {
       this.emit(':tell',"OK! I know you couldnt take it more! LOL ... Bye! ");
   },
   'AMAZON.HelpIntent': function () {
-      this.emit(':tell',"I say a random quote said by none other than the POTUS Himself ! Haha ,you guessed it rite,its about Donald Trump! GOD BLESS AMERICA, Indeed!");
+      this.emit(':ask',"I say a random quote said by none other than the POTUS Himself ! Haha ,you guessed it rite,its about Donald Trump! GOD BLESS AMERICA, Indeed!! Do you want to get started? Just say Yes or No!");
   },
   'AMAZON.CancelIntent': function () {
       this.emit(':tell', "Okay!");
