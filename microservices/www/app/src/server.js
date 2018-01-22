@@ -1,3 +1,4 @@
+
 var Alexa = require('alexa-sdk');
 var http = require('http');
 
@@ -14,10 +15,10 @@ var handlers = {
   'TrumpSays': function() {
 
     trumpSaysHttp((data) => {
-      var outputSpeech= 'Here goes a Random yet Funny quote ,by the POTUS, Donald Trump! ' + data.value + ' hmmmmm ..... Do you want the first quote?';
+      var outputSpeech= 'Welcome to Trump One o one! In this skill, I say a random quote said by none other than the POTUS Himself ! Haha ,you guessed it rite,its about Donald Trump! GOD BLESS AMERICA, Indeed!! Do you want to get started? Just say Yes or No!';
 
 
-      this.emit(':ask', outputSpeech,' Do you want the next quote?');
+      this.emit(':ask', outputSpeech,' Do you want the first quote?');
   }
 );
   },
@@ -35,10 +36,10 @@ var handlers = {
 );
   },
   'AMAZON.NoIntent': function () {
-      this.emit(':tell',"OK! I know you couldnt take it more! LOL ... Bye! ");
+      this.emit(':tell',"OK! I know you couldnt take it more! Lol ... Bye! ");
   },
   'AMAZON.HelpIntent': function () {
-      this.emit(':ask',"I say a random quote said by none other than the POTUS Himself ! Haha ,you guessed it rite,its about Donald Trump! GOD BLESS AMERICA, Indeed!! Do you want to get started? Just say Yes or No!");
+      this.emit(':ask',"I say a random quote said by none other than the POTUS Himself ! Haha ,you guessed it rite,its about Donald Trump! GOD BLESS AMERICA, Indeed!! Do you want to get started? Just say Yes or No!",' Do you want the next quote?');
   },
   'AMAZON.CancelIntent': function () {
       this.emit(':tell', "Okay!");
